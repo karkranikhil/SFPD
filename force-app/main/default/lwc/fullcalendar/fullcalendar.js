@@ -5,7 +5,7 @@ import FullCalendarJS from '@salesforce/resourceUrl/FullCalendarJS';
 import { NavigationMixin } from 'lightning/navigation';
 import { refreshApex } from '@salesforce/apex';
 import TIME_ZONE from '@salesforce/i18n/timeZone';
-import MomentTimeZone from '@salesforce/resourceUrl/MomentTimezone';
+import MomentTimezone from '@salesforce/resourceUrl/MomentTimezone';
 import LOCALE from '@salesforce/i18n/locale';
 import fetchEvents1 from '@salesforce/apex/FullCalendarController.fetchEvents';
 import updateContact from '@salesforce/apex/ContactDashboardController.updateContact';
@@ -52,6 +52,7 @@ export default class Fullcalendar extends NavigationMixin(LightningElement) {
         var taskId = url.searchParams.get("regId");
         this.taskIdURL = url.searchParams.get("regId");
         console.log('Task Id :>> ', taskId);
+        console.log('===== MomentTimezone '+MomentTimezone);
     }
     renderedCallback() {
         // Performs this operation only on first render
@@ -60,7 +61,7 @@ export default class Fullcalendar extends NavigationMixin(LightningElement) {
         }
         this.fullCalendarJsInitialised = true;
         Promise.all([
-             //loadScript(this, MomentTimeZone + "/MomentTimezone.js"),
+             loadScript(this, MomentTimezone + "/MomentTimezone.js"),
              loadStyle(this, FullCalendarJS + "/FullCalendarJS/fullcalendar.min.css"),
              loadScript(this, FullCalendarJS + "/FullCalendarJS/jquery.min.js"),
              loadScript(this, FullCalendarJS + "/FullCalendarJS/moment.min.js"),
