@@ -1,0 +1,72 @@
+<template>
+    <!-- Yellow Container-->
+    <div class="yellowContainer">
+        <div class="contentStyle">
+            <div class="yConTitle">Congratulations! {name}, You’ve successfully qualified Stage 3.</div></br>
+            <div class="yConText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate duis purus at
+                tempor dignissim dui
+                velit nibh tristique. Eu diam, turpis duis mi arcu. Sed pellentesque varius id amet volutpat mi. At
+                condimentum tellus aliquam ullamcorper nisl tristique ante. Vitae luctus vehicula non tellus in
+                pulvinar. Risus nulla fringilla vestibulum rhoncus, amet morbi quis consectetur ipsum. Non vestibulum in
+                nibh sapien integer turpis.</div>
+        </div>
+    </div>
+    </br></br>
+    <!--UI Image-->
+    <div class="boxStyle">
+        <img src={QualImg}></img></br>
+        <hr class="lineStyle">
+        <template for:each={tasks} for:item="task">
+            <div key={task.Id}>
+                <lightning-layout class="slds-box slds-m-around_small taskbox" multiple-rows>
+                    <lightning-layout-item size="1" class="slds-align_absolute-center">
+                        <!-- <lightning-input type="checkbox-button" checked={task.Checked} if:true={task.Checked} style="pointer-events:none"></lightning-input> -->
+                        <img src={checked} if:true={task.Checked}></img>
+                        <img src={unchecked} if:false={task.Checked}></img>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="9">
+                        <h2>Task #{task.Index}: <strong>{task.Type__c} Examination</strong></h2><br />
+                        <lightning-layout if:false={task.Checked}>
+                            <lightning-layout-item size="8" padding="around-small">
+                                <lightning-input type="date" label="Select Preferred Date" variant="label-inline"
+                                    read-only={task.Checked} data-id={task.Id} value={task.Registration_Date__c}>
+                                </lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" padding="around-small">
+                                <lightning-button variant="brand" label="Confirm" if:false={task.Checked}
+                                    data-id={task.Id} onclick={handleConfirm}></lightning-button>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" padding="around-small">
+                                <lightning-button variant="brand" label="Apply for Job" data-item={task.Type__c}
+                                    onclick={selectHandler}></lightning-button>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2">
+                        Priority: {task.Priority}
+                    </lightning-layout-item>
+                    <lightning-layout-item size="4" class="slds-align_absolute-center taskFooter slds-p-vertical_small">
+                        <template if:true={task.Due_Date__c}>
+                            <div class="taskInfo">Due Date</div>: {task.Due_Date__c}
+                        </template>
+                        <template if:false={task.Due_Date__c}>
+                            <div class="taskInfo">Due Date</div>: To be decided
+                        </template>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="4" class="slds-align_absolute-center taskFooter slds-p-vertical_small">
+                        <template if:true={task.Registration_Date__c}>
+                            <div class="taskInfo">Exam Scheduled Date</div>: {task.Registration_Date__c}
+                        </template>
+                        <template if:false={task.Registration_Date__c}>
+                            <div class="taskInfo">Exam Scheduled Date</div>: To be scheduled
+                        </template>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="4" class="slds-align_absolute-center taskFooter slds-p-vertical_small">
+                        <div class="taskInfo">Status</div>: {task.Status__c}
+                    </lightning-layout-item>
+
+                </lightning-layout>
+            </div>
+        </template>
+    </div>
+</template>

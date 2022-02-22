@@ -1,0 +1,61 @@
+.boxStyle {
+    margin: 3% 12%;
+    padding: 2% 0;
+    background: #F9FBFF;
+    box-shadow: 0px 5px 9px rgba(54, 82, 135, 0.1);
+}
+
+.lineStyle {
+    position: inherit;
+    height: 0px;
+
+    border: 1px solid rgba(54, 82, 135, 0.2);
+}
+
+.yellowContainer {
+    padding: 3% 12%;
+    background: #FFDC6B;
+}
+
+.yConTitle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
+
+    color: #003A6A;
+}
+
+.yConText {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+
+    color: #003A6A;
+}
+
+.taskbox {
+    background-color: white;
+}
+
+.taskbox h2{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.taskbox strong{
+    color: #2887EC;
+}
+
+.taskInfo{
+    color: #2887EC;
+}
+
+.taskFooter{
+    background: #E7F2FD;
+}

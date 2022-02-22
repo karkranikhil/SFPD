@@ -1,0 +1,109 @@
+<template>
+        <!-- Assign Task Image-->
+        <template for:each={tasks} for:item="task">
+            <div key={task.Id}> 
+                        <lightning-layout class="slds-box slds-m-around_small taskbox" multiple-rows>
+                            <lightning-layout-item size="1" class="slds-align_absolute-center">
+                                <!-- <lightning-input type="checkbox-button" checked={task.Checked} if:true={task.Checked} style="pointer-events:none"></lightning-input> -->
+                                <img src={checked} if:true={task.Checked}></img>
+                                <img src={unchecked} if:false={task.Checked}></img>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="9">
+                                <h2>Task #{task.Index}: <strong>{task.Name}</strong></h2>
+                                <template if:true={task.HasDate}>
+                                    <lightning-layout if:false={task.Checked}>
+                                        <!-- <lightning-layout-item size="8" padding="around-small">
+                                            <lightning-input type="date" label="Select Preferred Date" variant="label-inline" read-only={task.Checked} data-id={task.Id} value={task.Preferred_Date__c}></lightning-input>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="4" padding="around-small">
+                                            <lightning-button variant="brand" label="Confirm" if:false={task.Checked} data-id={task.Id} onclick={handleConfirm}></lightning-button>
+                                        </lightning-layout-item> -->
+                                         <template if:true={task.ScheduleBtn}>
+                                              <template if:false={task.ReScheduleBtn}>
+                                                <lightning-layout-item size="5" padding="around-small">
+                                                    <div class="btnStyle">
+                                                        <button type="button" class="slds-button btnTextStyle"
+                                                            data-item={task.Name} onclick={selectHandler}
+                                                            data-id={task.Id} disabled={task.isDisabled__c}>Schedule
+                                                            Exam </button>
+                                                    </div>
+                                                    <!-- <lightning-button variant="brand" class="slds-button btnTextStyle" label="Schedule Exam" data-item={task.Name} data-id={task.Id}
+                                                        onclick={selectHandler}>
+                                                    </lightning-button> -->
+                                                </lightning-layout-item>
+                                              </template>
+                                         </template>
+                                        <template if:false={task.ScheduleBtn}>
+                                            <template if:true={task.ReScheduleBtn}>
+                                                <lightning-layout-item size="5" padding="around-small">
+                                                    <div class="btnStyle">
+                                                        <button type="button" class="slds-button btnTextStyle"
+                                                            data-item={task.Name} onclick={selectHandler}
+                                                            data-id={task.Id} disabled={task.isDisabled__c}>Re-Take Exam</button>
+                                                    </div>
+                                                    <!-- <lightning-button variant="brand" class="slds-button btnTextStyle" label="Re-Take Exam" data-item={task.Name} data-id={task.Id}
+                                                        onclick={selectHandler}>
+                                                    </lightning-button> -->
+                                                </lightning-layout-item>
+                                            </template>
+                                         </template>
+                                         
+                                    </lightning-layout>
+                                </template>
+                                <template if:false={task.HasDate}>
+                                    <lightning-layout>
+                                        <lightning-layout-item size="12" padding="around-small" class="bluebg">
+                                            The Background Unit manages the investigation process which includes verifying identity, education, employment history, criminal record, credit history and will
+include interviews with family, friends and relatives. It is the responsibility of the applicant to provide all necessary documents to the Background Unit so the
+investigation process can begin. Incomplete background packets will delay the pre-employment investigation.
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                    <lightning-layout>
+                                        <template if:false={task.Submitted}>
+                                            <lightning-layout-item size="5" padding="around-small">
+                                                    <div class="btnStyle">
+                                                        <template if:false={task.Checked}>
+                                                            <button type="button" class="slds-button btnTextStyle"
+                                                                data-item={task.Name} onclick={onClickHandler}
+                                                                data-id={task.Id} disabled={task.isDisabled__c}>Upload</button>
+                                                        </template>
+                                                    </div>
+                                            </lightning-layout-item>
+                                        </template>
+                                        <template if:true={task.Submitted}>
+                                            <lightning-layout-item size="6" padding="around-small">
+                                                  <h2><strongGreen>Documents Submitted Successfully</strongGreen></h2>
+                                            </lightning-layout-item>
+                                             <lightning-layout-item size="6" padding="around-small">
+                                                    <div class="btnStyle">
+                                                        <template if:false={task.Checked}>
+                                                            <button type="button" class="slds-button btnTextStyle"
+                                                                data-item={task.Name} onclick={onClickHandler}
+                                                                data-id={task.Id} disabled={task.isDisabled__c}>Review</button>
+                                                        </template>
+                                                    </div>
+                                            </lightning-layout-item>
+                                        </template>
+                                    </lightning-layout>
+                                </template>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2">
+                                Priority: {task.Priority}
+                            </lightning-layout-item>
+                            <template if:true={task.HasDate}>
+                                <lightning-layout-item size="4" class="slds-align_absolute-center taskFooter slds-p-vertical_small">
+                                    <template if:true={task.Due_Date__c}><div class="taskInfo">Due Date</div>: {task.Due_Date__c}</template>
+                                    <template if:false={task.Due_Date__c}><div class="taskInfo">Due Date</div>: To be decided</template>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="4" class="slds-align_absolute-center taskFooter slds-p-vertical_small">
+                                    <template if:true={task.Preferred_Date__c}><div class="taskInfo">Exam Scheduled Date</div>: {task.Preferred_Date__c}</template>
+                                    <template if:false={task.Preferred_Date__c}><div class="taskInfo">Exam Scheduled Date</div>: To be scheduled</template>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="4" class="slds-align_absolute-center taskFooter slds-p-vertical_small">
+                                    <div class="taskInfo">Status</div>: {task.Status__c}
+                                </lightning-layout-item>
+                            </template>
+                        </lightning-layout>
+            </div>
+        </template>
+</template>

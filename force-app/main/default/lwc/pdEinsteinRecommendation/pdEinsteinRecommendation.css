@@ -1,0 +1,17 @@
+.value{
+    color: orange;
+}
+
+.sectionA{
+    color: gray;
+}
+.score{
+    font-size: x-large;
+}
+.whitebg{
+    background-color: #fff;
+    padding: 1.25rem 0.45rem;
+}
+.section{
+    margin: 1rem 0.45rem;
+}

@@ -1,0 +1,91 @@
+<template>
+    <div class="boxStyle">
+        <!-- BG Check-->
+        <div class="textStyle">Stage 5: Background Check</div>
+        <div class="ps_underline"></div></br></br>
+        <h2>Task #1: <strong>Upload required documents for Background Investigation</strong></h2><br/>
+        <!-- <div class="innerboxStyle">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_2-of-3">
+                    <span>
+                        <div class="doctextStyle">Original Social Security Card
+                        </div>
+                        <div class="loremStyle">Accepted Format: PDF,JPG</div></br>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-3" style="text-align: right;">
+                    <span>
+                        <lightning-file-upload name="fileUploader" accept={acceptedFormats} record-id={myRecordId}
+                            onuploadfinished={handleUploadFinished2} multiple>
+                        </lightning-file-upload>
+                        <template if:true={showImg2}>
+                            {uploadFileName2}<img src={greenCheckImg}></img>
+                        </template>
+                    </span>
+                </div>
+            </div>
+        </div> -->
+        <template for:each={bgDocs} for:item="bgDoc">
+            <div key={bgDoc.Id}>
+                <div class="innerboxStyle">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_2-of-3">
+                            <span>
+                                <div class="doctextStyle">{bgDoc.Name} <span if:true={bgDoc.isRequired__c} style="color:red;">*</span></div>
+                                <div class="loremStyle">Accepted Format: PDF,JPG,JPEG</div></br>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3" style="text-align: right;">
+                            <span>
+                                <lightning-file-upload name="fileUploader" accept={acceptedFormats} record-id={myRecordId} data-name={bgDoc.Id}
+                                    onuploadfinished={handleUploadFinished} multiple>
+                                </lightning-file-upload>
+                                <br/>
+                                <template for:each={bgDoc.AttachedContentDocuments} for:item="attachment">
+                                    <a onclick={handleDownload} key={attachment.ContentDocumentId} data-name={attachment.ContentDocumentId} class="slds-p-around_xx-small">
+                                        <lightning-badge label={attachment.Title}></lightning-badge>
+                                    </a>
+                                     <a onclick={handleDelete} key={attachment.ContentDocumentId} data-name={attachment.ContentDocumentId} class="slds-p-around_xx-small">
+                                        <lightning-badge style="color:red" label="X"></lightning-badge>
+                                    </a>
+                                </template>
+                                <template if:true={bgDoc.isAuthofInfo}>
+                                    <button type="button" class="slds-button btnStyle slds-align_absolute-center"
+                                    onclick={handleConsentFormDownload}>Download</button>
+                                </template>
+                                <template if:true={bgDoc.isAuthofConCred}>
+                                    <button type="button" class="slds-button btnStyle slds-align_absolute-center"
+                                    onclick={handleAuthFormDownload}>Download</button>
+                                </template><!--
+                                <template if:true={bgDoc.isConsentUpload}>
+                                    <button type="button" class="slds-button btnStyle slds-align_absolute-center"
+                                    onclick={handleFormDownload}>Download</button>
+                                </template>-->
+                            </span>
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+        </template><!--
+        <div class="innerboxStyle slds-hide">
+            <lightning-record-edit-form object-api-name="Contact">
+                <lightning-messages> </lightning-messages>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name="Psychological_Exam_date__c">
+                        </lightning-input-field>
+                        <lightning-input-field field-name="Polygraph_Exam_Date__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name="Test_Date_for_Used_of__c"></lightning-input-field>
+                        <lightning-input-field field-name="Medical_Exam_Date__c"></lightning-input-field>
+                    </div>
+                </div></br>
+            </lightning-record-edit-form>
+        </div>-->
+
+
+        <button type="button" class="slds-button btnStyle slds-align_absolute-center"
+            onclick={handleUpdate}>Submit</button>
+    </div>
+</template>

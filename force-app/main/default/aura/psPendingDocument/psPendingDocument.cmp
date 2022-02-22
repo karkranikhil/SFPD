@@ -1,0 +1,41 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:isUrlAddressable">
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="recordError" type="String" description="An error message bound to force:recordData"/>
+    <aura:attribute name="editFlowName" type="String"  description="Launch this flow when the record is edited"/>
+    <aura:attribute name="targetFlowName" type="String"  />
+    <aura:attribute name="oldStatusValue" type="String"  />
+    <aura:attribute name="newStatusValue" type="String"  />
+    <aura:attribute name="launchMode" type="String" default="Modeless" description="Launch this flow when the record changes"/>
+    <force:recordData aura:id="recordLoader"
+                      fields="Id,Status__c"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.recordUpdated}"
+                      mode="VIEW"/>
+    
+    
+    <aura:attribute name="openModal" type="Boolean" default="false" />
+    
+    <!-- Here we wrapped our modal code inside aura:if. If it evaluates true, code inside it will be visible -->
+    <aura:if isTrue="{!v.openModal}" >
+        <div class="demo-only" style="height: 600px;">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open"> 
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                    </header>
+                    <!-- Body of Modal -->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <lightning:flow aura:id="flow" onstatuschange="{!c.flowStatusChange}"/> 
+                    </div> 
+                </div>
+            </section>
+            <!-- Backdrop to set background slightly opaque. -->
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </aura:if>
+</aura:component>

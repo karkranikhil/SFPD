@@ -1,0 +1,116 @@
+.blueContainer {
+  background: rgba(40, 135, 236, 0.8);
+  padding: 2% 12%;
+}
+
+.ps_underline {
+  border-bottom: 4px solid #eabc28;
+  width: 8rem;
+  margin-top: 0.5rem;
+}
+
+.bConTitle {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 38px;
+
+  color: #FFFFFF;
+}
+
+.bConText {
+  position: relative;
+
+  width: 80%;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #FFFFFF;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  padding: 3% 12%;
+
+}
+
+.containerText {
+  word-wrap: break-word;
+  margin-bottom: 1%;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.conPoliceStyle {
+  margin: 0 0 2% 0;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 55px;
+
+  color: #FFFFFF;
+}
+
+.conPolHighlight {
+  width: fit-content;
+  background: #EABC28;
+  color: #091434;
+}
+
+.loremStyle {
+  width: 28em;
+  height: 72px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 1rem;
+  line-height: 24px;
+  color: #FFFFFF;
+
+}
+
+.btnTextStyle {
+  position: relative;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+
+  padding: revert;
+
+
+  color: #FFFFFF;
+}
+
+.btnStyle {
+
+  padding: 10px 20px;
+
+  font-size: 0.9375rem;
+  line-height: auto;
+  text-align: center;
+
+  cursor: pointer;
+  background-color: #2887EC;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  background: #2887EC;
+
+  width: fit-content;
+
+}

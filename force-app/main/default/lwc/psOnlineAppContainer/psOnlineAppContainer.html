@@ -1,0 +1,44 @@
+<template>
+    <!-- Yellow Container-->
+    <div class="yellowContainer">
+        <div class="contentStyle">
+            <div class="yConTitle">Welcome {name}</div></br>
+            <div class="yConText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate duis purus at
+                tempor dignissim dui
+                velit nibh tristique. Eu diam, turpis duis mi arcu. Sed pellentesque varius id amet volutpat mi. At
+                condimentum tellus aliquam ullamcorper nisl tristique ante. Vitae luctus vehicula non tellus in
+                pulvinar. Risus nulla fringilla vestibulum rhoncus, amet morbi quis consectetur ipsum. Non vestibulum in
+                nibh sapien integer turpis.</div>
+        </div>
+    </div>
+    </br></br>
+    <div class="boxStyle">
+        <!-- Online Application-->
+        <div class="textStyle">Step 1 : Online Application</div> <div class="ps_underline"></div></br></br>
+        <div class="loremStyle">First, complete and submit an online application with the City and County of San Francisco. To do so, visit the Entry Level (Q-2) Police Officer Employment Opportunities page on the Department of Human Resources website and follow the directions.</div></br>
+        <!--Path Image-->
+        <img src={psPathImg}></img></br></br>
+        <hr class="lineStyle">
+        <!--Application Instruction-->
+        <div class="textStyle">Application Instructions</div> <div class="ps_underline"></div></br>
+        <div class="loremStyle">The Department of Human Resources and the developers of the City and County of San
+            Francisco online employment application system are not responsible or in any way liable for any computer
+            hardware or software malfunction which may affect your employment application or the applicant selection
+            process.
+            Please fill out your application by clicking the below button and completed the form and submit to start
+            your application process.
+        </div></br>
+        <!--Apply Now Button-->
+        <div class="btnStyle slds-align_absolute-center" if:false={submitted}>
+            <button type="button" class="slds-button slds-align_absolute-center btnTextStyle"
+                onclick={onClickHandler}>Apply Now</button>
+        </div>
+        <div class="textStyle slds-align_absolute-center" if:true={submitted}>
+            <b>Your application is under review</b>
+        </div>
+    </div>
+    </br></br>
+    <c-ps-card-stack title={stagetitle}></c-ps-card-stack>
+    </br></br>
+    <c-ps-card-stack title={faqtitle}></c-ps-card-stack>
+</template>

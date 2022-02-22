@@ -1,0 +1,169 @@
+.containerStyle {
+  padding: 3% 12%;
+}
+
+.conTitle {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 34px;
+}
+
+.conSubTitle {
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+
+}
+
+.conText {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+
+}
+
+.boxText {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  text-align: center;
+
+  color: #1D2E54;
+}
+
+.btnStyle {
+  padding: 10px 20px;
+  margin-top: 3%;
+
+  cursor: pointer;
+  background-color: #2887EC;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  background: #2887EC;
+
+  width: fit-content;
+
+}
+
+.btnTextStyle {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+
+  padding: revert;
+
+
+  color: #FFFFFF;
+}
+
+.boxTitle {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 46px;
+  text-align: center;
+
+  color: #091433;
+}
+
+.boxStyle1 {
+  background: #E0E9F2;
+  text-align: -webkit-center;
+}
+
+.tileBox {
+  background: #091433;
+}
+
+.tileContent {
+  background: rgba(9, 20, 51, 0.7);
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: inherit;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.joinStyle {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 34px;
+  color: #091433;
+}
+
+.playerBoxStyle {
+  padding: 3% 0;
+}
+
+.playerTextStyle {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #1D2E54;
+}
+
+
+.ps_underline {
+  border-bottom: 4px solid #eabc28;
+  width: 8rem;
+  margin-top: 0.5rem;
+}
+
+.card-img {
+  border-top: 4px solid #eabc28;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 20rem;
+  width: 100%;
+  margin: 0 1%;
+}
+
+.card-img div {
+  transition: all 0.5s ease;
+}
+
+.card-img:hover div {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.boxStyle {
+  margin: auto;
+  padding: 3% 12%;
+}
+
+.cardStyle {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-content: center;
+  padding: 2% 0;
+}

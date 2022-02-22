@@ -1,0 +1,86 @@
+ul {
+    padding: 1rem 0rem;
+}
+
+.footerSubHeading {
+    color: #CCB078;
+}
+
+.footerUpper {
+    background-color: #1c2d55;
+    border-bottom: solid 3px #fff;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 3% 12%;
+    border-top: 4px solid #e8bb29;
+}
+
+.footerGrid {
+    margin: auto;
+    width: 80%;
+}
+
+.footerBottom {
+    background-color: #0a1433;
+    padding: 1.375rem 0;
+    color: #ccb078;
+}
+
+.buttonSubmit {
+    padding: 1rem 1.875rem 0.875rem 1.875rem;
+    font-size: 0.9375rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #e8bb29;
+    color: #003a6a;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+.bi-google {
+    color: #dd4b39;
+    /* margin: 5px 20px; */
+}
+.bi-twitter {
+    color: #55acee;
+    /* margin-top: 10px; */
+    height: 20px;
+    width: 20px;
+}
+.iconCont{
+    margin: 10px 5px;
+}
+.facebook_logo {
+    fill: white;
+    stroke: black;
+    display: inline-block;
+    width: 15px;
+    height: 20px;
+}
+
+.facebook_ {
+    background-color: #3b5998;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20%;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.facebook_:hover {
+    background-color: grey;
+}
+/* .instagram-logo {
+    path {
+      fill: #000;
+    }
+    circle: #fff;
+    .logo {
+      fill: orange;
+    }
+  } */

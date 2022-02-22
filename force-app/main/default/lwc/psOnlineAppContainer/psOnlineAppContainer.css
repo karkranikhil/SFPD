@@ -1,0 +1,93 @@
+.yellowContainer {
+    position: relative;
+    width: auto;
+    height: 293px;
+    padding: 4% 12%;
+    background: #FFDC6B;
+}
+
+.yConTitle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
+
+    color:#091433;
+}
+
+.yConText {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #1D2E54;
+}
+
+.boxStyle {
+    margin: 3% 12%;
+    padding: 4% 3%;
+    background: #F9FBFF;
+    box-shadow: 0px 5px 9px rgba(54, 82, 135, 0.1);
+}
+
+.textStyle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    color: #091433;
+}
+
+.loremStyle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #1D2E54;
+}
+
+.btnTextStyle {
+    position: relative;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 14px 20px;
+    color: #FFFFFF;
+}
+.btnStyle {
+
+    font-size: 0.9375rem;
+    line-height: auto;
+    text-align: center;
+    margin-top: 2%;
+    cursor: pointer;
+    background-color: #2887EC;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    background: #2887EC;
+
+    width: fit-content;
+
+}
+
+.lineStyle {
+    position: inherit;
+    height: 0px;
+
+    border: 1px solid rgba(54, 82, 135, 0.2);
+}
+
+.ps_underline {
+    border-bottom: 4px solid #eabc28;
+    width: 8rem;
+    margin-top: 0.5rem;
+}

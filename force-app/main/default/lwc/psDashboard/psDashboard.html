@@ -1,0 +1,305 @@
+<template>
+    <!-- Yellow Container-->
+    <!-- <div class="yellowContainer">
+        <div class="contentStyle">
+            <div class="yConTitle">Welcome {name}!</div></br>
+            <div class="yConText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate duis purus at
+                tempor dignissim dui
+                velit nibh tristique. Eu diam, turpis duis mi arcu. Sed pellentesque varius id amet volutpat mi. At
+                condimentum tellus aliquam ullamcorper nisl tristique ante. Vitae luctus vehicula non tellus in
+                pulvinar. Risus nulla fringilla vestibulum rhoncus, amet morbi quis consectetur ipsum. Non vestibulum in
+                nibh sapien integer turpis.</div>
+        </div>
+    </div>
+    </br></br> -->
+    <!--
+    <div class="slds-grid outerBox">
+        <div class="slds-col slds-size_1-of-4 boxStyle">
+            <div class="sideBox">
+                <div class="textStyle">Pending Tasks</div>
+                <div class="ps_underline"></div></br></br>
+                <div class="blueBox">
+                    <p>Academy Starts: 7 days </p>
+                </div>
+                </br>
+                <div class="blueBox">
+					<ul>
+						<li>
+							<p>Have you trained for the PAT today?</p>
+						</li>
+						<li>
+							<ul class="slds-is-nested slds-list_dotted">
+								<li> Tricep Extension: 3 Sets of 12 to 15 repetitions 4 to 5 times a week. </li>
+							</ul>
+						</li>
+					
+					</ul>
+                  
+                </div>
+            </div>
+            </br></br>
+            <div class="sideBox">
+                <div class="textStyle">Quick Updates</div>
+                <div class="ps_underline"></div></br></br>
+                <div class="redBox">
+                    <p>Your Application for SFPD Cadet program under Civilian Job posting has been
+                        <strong> Rejected</strong>.
+                    </p>
+                </div>
+                </br>
+                <div class="yellowBox">
+                    <p>Your Application for Lateral Entry Program under Civilian Job posting is Under Review. Keep
+                        Checking
+                        this
+                        space for <strong>Updates</strong>.</p>
+                </div>
+            </div>
+        </div>-->
+
+        <div class="slds-grid outerBox">
+        <div class="slds-col slds-size_1-of-4 boxStyle">
+            <div class="sideBox">
+                <div class="textStyle">Events</div>
+                <div class="ps_underline"></div></br></br>
+                <div class="blueBox">
+                     <ul class="slds-is-nested slds-list_dotted">
+                   <li> <p>Coffee with a Cop</p></li><li>
+                    <p>Community Surveys</p></li><li>
+                    <p>Cover Your K-9</p></li><li>
+                    <p>Holiday Outreach</p></li><li>
+                    <p>National Night Out</p></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="sideBox">
+                <div class="textStyle">Programs</div>
+                <div class="ps_underline"></div></br></br>
+                <div class="blueBox">
+                    <ul class="slds-is-nested slds-list_dotted">
+                    <li><p>Community Liaison Unit</p></li><li>
+                    <p>Auxiliary Law Enforcement Response Team (ALERT)</p></li><li>
+                    <p>Community Police Academy</p></li><li>
+                    <p>Reserve Police Officer Program</p></li><li>
+                    <p>Safe Place</p></li><li>
+                    <p>SFPD Pink Patch Project</p></li><li>
+                    <p>SF SAFE</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </br></br>
+        <div class="slds-col slds-size_3-of-4  sideBox boxStyle">
+            <!-- BG Check-->
+            <div class="textStyle">My Applications</div>
+            <div class="ps_underline"></div></br></br>
+            <div class="boxstyle" if:true={showError}>
+                No Application Found On Your Profile. Please Create a Application
+            </div>
+            <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_header-hidden"
+                aria-label="My Applications" if:false={showError}>
+                <thead class="tableHeader">
+                    <tr class="slds-line-height_reset">
+                        <th class="slds-text-align_center headerBackground" scope="col">
+                            <div class="slds-truncate" title="Position">Position</div>
+                        </th>
+                        <th class="slds-text-align_center headerBackground" scope="col">
+                            <div class="slds-truncate" title="Application Name">Application</div>
+                        </th>
+                        <th class="slds-text-align_center headerBackground" scope="col">
+                            <div class="slds-truncate" title="Status">Status</div>
+                        </th>
+                        <th class="slds-text-align_center headerBackground" scope="col">
+                            <div class="slds-truncate" title="Created Date">Created Date</div>
+                        </th>
+                        <th class="slds-text-align_center headerBackground" scope="col">
+                            <div class="slds-truncate" title="Action">Action</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={applications} for:item="application" for:index="index">
+                        <tr key={application.Id} class="slds-hint-parent">
+                            <th data-label="Position" scope="row" class="slds-text-align_center">
+                                <div class="" title={application.applicationPosition}>
+                                    {application.applicationPosition}
+                                </div>
+                            </th>
+                            <td class="slds-text-align_center" data-label="Application Name">
+                                <div class="" title={application.applicationName}>
+                                    {application.applicationName}</div>
+                            </td>
+                            <td class="slds-text-align_center" data-label="Status">
+                                <div style={application.cssproperty} title={application.applicationStatus}>
+                                    {application.applicationStatus}</div>
+                            </td>
+                            <td class="slds-text-align_center" data-label="Due Date">
+                                <div class="" title="Created Date">{application.createdDate}</div>
+                            </td>
+                            <td class="slds-text-align_center" data-label="Action">
+                                <template if:true={application.applicationCompleted}>
+                                    <div class="slds-truncate" title="View">
+                                        <!-- <lightning-button label="View" slot="actions" value={index} variant="brand"
+                                            onclick={goToApplication}></lightning-button> -->
+                                        <button class="slds-button slds-button_brand slds-button_stretch" value={index}
+                                            onclick={goToApplication}>View</button>
+                                    </div>
+                                </template>
+                                <template if:true={application.isPreQualification}>
+                                    <div class="slds-truncate" title="Start">
+                                        <!-- <lightning-button label="Start" slot="actions" value={index} variant="brand"
+                                            onclick={startApplication}></lightning-button> -->
+                                        <button class="slds-button slds-button_brand slds-button_stretch" value={index}
+                                            onclick={startApplication}>Start</button>
+                                    </div>
+                                </template>
+                                <template if:true={application.isResumeURL}>
+                                    <div class="slds-truncate" title="Resume">
+                                        <!-- <lightning-button label="Resume" slot="actions" value={index} variant="brand"
+                                            onclick={resumeApplication}></lightning-button> -->
+                                        <button class="slds-button slds-button_brand slds-button_stretch" value={index}
+                                            onclick={resumeApplication}>Resume</button>
+                                    </div>
+                                </template>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+
+            </table>
+
+            <!-- <template for:each={applications} for:item="application" for:index="index">
+            <div key={application.Id}>
+                <lightning-card title={application.Name} icon-name="standard:drafts">
+                    <template if:true={application.isOnlineApplication}>
+                        <lightning-button label="Resume" slot="actions" value={index} onclick={resumeApplication}>
+                        </lightning-button>
+                    </template>
+                    <template if:false={application.isOnlineApplication}>
+                        <lightning-button label="Go To Application" slot="actions" value={index}
+                            onclick={goToApplication}></lightning-button>
+                    </template>
+                    <div class="slds-p-around_small">
+                        <lightning-progress-indicator current-step={application.currentStep} type="path" variant="base">
+                            <lightning-progress-step label="Pre-Qualification" value="1"></lightning-progress-step>
+                            <lightning-progress-step label="Online Application" value="2"></lightning-progress-step>
+                            <lightning-progress-step label="Application Under Review" value="3">
+                            </lightning-progress-step>
+                            <lightning-progress-step label="Qualifying Tests" value="4"></lightning-progress-step>
+                            <lightning-progress-step label="Background" value="5"></lightning-progress-step>
+                            <lightning-progress-step label="On Hold" value="6"></lightning-progress-step>
+                            <lightning-progress-step label="Final Offer" value="7"></lightning-progress-step>
+                            <lightning-progress-step label="Disqualified-Closed" value="8"></lightning-progress-step>
+                        </lightning-progress-indicator>
+                    </div>
+
+                </lightning-card>
+            </div>
+            {application.Id} {application.Name} CurrentStep: {application.currentStep}
+        </template> -->
+            <!-- <hr class="lineStyle"> -->
+            <!-- Assign Task Image-->
+            <!-- <div class="textStyle">Resume Application</div>
+        <div class="ps_underline"></div></br></br>
+        <template for:each={applications} for:item="application">
+            {application.Id} {application.Name}
+        </template> -->
+            <!--<img src={psAssignBGTaskImg} onclick={onClickHandler} style="cursor:pointer;"></img></br>
+        <div class="btnStyle slds-align_absolute-center">
+            <button type="button" class="slds-button slds-align_absolute-center btnTextStyle"
+                >Submit</button>
+        </div> -->
+            <!-- <div class="container">
+            <div class="jobStyle">More Job Openings</div>
+            <div class="ps_underline"></div></br></br>
+            <p style="padding-left: 2%;">
+                <span class="titleStyle">ALL POSITIONS</span>&emsp; &emsp; &emsp;
+                <span class="titleStyle2">ENTRY LEVEL POLICE OFFICER</span>&emsp; &emsp; &emsp;
+                <span class="titleStyle2">CIVILLIAN JOB OPENING</span> &emsp; &emsp; &emsp;
+            </p>
+            <div class="line"></div>
+            </br>
+            
+            
+                <lightning-accordion class="example-accordion"
+                                     onsectiontoggle={handleToggleSection}
+                                     active-section-name="A">
+                    <lightning-accordion-section class="tile" name="A" label="Entry Level Police Officer" >
+                        
+                        <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+                            <div class="slds-size_1-of-3 slds-p-vertical_x-small">
+                                <div class="small_title">Salary</div>
+                                <div class="small_desc">$55,117,000 - $95,325,000 Anually</div>
+                            </div>
+                            <div class="slds-size_1-of-3 slds-p-vertical_x-small">
+                                <div class="small_title">Job Type</div>
+                                <div class="small_desc">CS Full Time</div>
+                            </div>
+                            <div class="slds-size_1-of-3 slds-p-vertical_x-small">
+                                <div class="small_title">Department</div>
+                                <div class="small_desc">Police Recruitment</div>
+                            </div>
+                            <div class="slds-size_1-of-3 slds-p-vertical_x-small">
+                                <div class="small_title">Closing</div>
+                                <div class="small_desc">Contiuous</div>
+                            </div>
+                            <div class="slds-size_1-of-3 slds-p-vertical_x-small">
+                                <div class="small_title">Job Number</div>
+                                <div class="small_desc">2749</div>
+                            </div>
+                            <div class="slds-size_2-of-2 slds-p-vertical_x-small">
+                                <div class="small_desc">Habitant donec faucibus at ipsum nibh in. Nibh nulla mi et mi,
+                                    ultrices nulla non, condimentum nunc.</div>
+                            </div>
+                            <div class="slds-size_1-of-2 slds-p-vertical_small">
+                                <div class="btnStyle">
+                                    <button type="button" class="slds-button btnTextStyle"
+                                        onclick={onBtnclickHandler}>Submit Interest Form</button>
+                                </div>
+                            </div>
+                            <div class="slds-size_1-of-2 slds-p-vertical_small">
+                                <div class="small_desc" onclick={onclickHandler}><u>View full details</u></div>
+                            </div>
+                        </div>
+                    </lightning-accordion-section>
+            
+                    <lightning-accordion-section class="tile" name="B" label="Reserve Police Officer">
+                        <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+                            <div class="slds-size_2-of-3 slds-p-vertical_x-small">
+                                <div class="small_title">Lorem Ipsum</div>
+                                <div class="small_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    Lacinia
+                                    mauris....<b>read
+                                        more</b></div>
+                            </div>
+                        </div>
+                    </lightning-accordion-section>
+                    <lightning-accordion-section class="tile" name="C" label="Lateral Entry Program">
+                        <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+                            <div class="slds-size_2-of-3 slds-p-vertical_x-small">
+                                <div class="small_title">Lorem Ipsum</div>
+                                <div class="small_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    Lacinia
+                                    mauris....<b>read
+                                        more</b></div>
+                            </div>
+                        </div>
+                    </lightning-accordion-section>
+                    <lightning-accordion-section class="tile" name="D" label="Internship Program">
+                        <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+                            <div class="slds-size_2-of-3 slds-p-vertical_x-small">
+                                <div class="small_title">Lorem Ipsum</div>
+                                <div class="small_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    Lacinia
+                                    mauris....<b>read
+                                        more</b></div>
+                            </div>
+                        </div>
+                    </lightning-accordion-section>
+                </lightning-accordion>
+        </div>            -->
+        <br /> <br />
+            <c-ps-job-opening-comp></c-ps-job-opening-comp>
+        </div>
+
+    </div>
+</template>

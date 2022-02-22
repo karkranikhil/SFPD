@@ -1,0 +1,71 @@
+.boxStyle {
+    margin: auto;
+    padding: 3% 12%;
+}
+
+.cardStyle{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-content: center;
+}
+
+.titleStyle {
+    position: relative;
+    height: 38px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 34px;
+
+    color: #091433;
+}
+
+.ps_underline {
+    border-bottom: 4px solid #eabc28;
+    width: 8rem;
+    margin-top: 0.5rem;
+}
+
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tileContent {
+    background: rgba(9, 20, 51, 0.7);
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 31px;
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    width: inherit;
+}
+
+.card-img {
+    border-top: 4px solid #eabc28;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 20rem;
+        width: 100%;
+        margin: 0 1%;
+}
+
+.card-img div{
+    transition: all 0.5s ease;
+}
+
+.card-img:hover div {
+    font-size: 1.3rem;
+    cursor: pointer;
+}

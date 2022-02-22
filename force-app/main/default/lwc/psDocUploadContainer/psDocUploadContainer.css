@@ -1,0 +1,76 @@
+.textStyle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    color: #091433;
+}
+
+.doctextStyle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 38px;
+
+    color: #091433;
+}
+
+.loremStyle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #1D2E54;
+}
+
+.boxStyle {
+    margin: 3% 12%;
+    padding: 4% 3%;
+    background: #FBFBFB;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.innerboxStyle {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 10px rgb(221 221 221 / 10%);
+    margin: 1% 0;
+    padding: 2%;
+}
+
+.uploadContainer {
+    background: #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 10px rgba(221, 221, 221, 0.1);
+}
+
+.btnStyle {
+    padding: 10px 20px;
+    font-size: 0.9375rem;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    background: #2887EC;
+    width: fit-content;
+    border-radius: 0;
+    margin-top: 2%;
+
+}
+
+.ps_underline {
+    border-bottom: 4px solid #eabc28;
+    width: 8rem;
+    margin-top: 0.5rem;
+}
+ h2{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}

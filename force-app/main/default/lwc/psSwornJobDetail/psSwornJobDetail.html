@@ -1,0 +1,83 @@
+<template>
+    <!--SWORN JOB OPENING SECTION-->
+    <div class="containerStyle">
+        <div class="contentStyle">
+            <div class="conTitle">Entry Level Police Officer</div></br>
+            <!--<div class="conSubTitle">Entry Level Police Officer</div></br></br>-->
+            <div class="conText">
+                The City and County of San Francisco invites you to join a highly respected police
+                department and serve the citizens of one of the most beautiful cities in the country. San Francisco
+                Police Officers perform a wide variety of duties to promote public safety and security, prevent crime
+                and enforce the law. Police officers perform a number of essential functions. For example, they patrol
+                districts to prevent and detect crime; respond to calls for assistance; conduct criminal investigations;
+                interact with the community to build cooperation and support; pursue and arrest suspects; enforce
+                traffic and parking laws; write reports and maintain records; work with superiors, peers, and others as
+                a team; prepare for and participate in planned events; prepare for court and give testimony; and fulfill
+                other administrative duties when required. This is much more than a job; it is an opportunity to build a
+                career of which you can be proud.<br><br>Thank you for your interest in serving San Francisco, please
+                read
+                below for the next steps to begin your application process.
+            </div>
+        </div>
+    </div>
+    <!-- READ ME COMPONENT-->
+   <div class="boxStyle">
+    <div class="joinStyle">Read Me!</div><div class="ps_underline"></div></br>
+
+    <div class="cardStyle">
+            <div class="card-img" style={img1}>
+                <!-- <img src={psHomeQulaification}></img> -->
+                <div class="tileContent">
+                    Eligibility Criteria
+                </div>
+            </div>
+            <div class="card-img" style={img2}>
+                <!-- <img src={psSalaryBenifits}></img> -->
+                <div class="tileContent">
+                    Salary And Benefits
+                </div>
+            </div>
+    </div>
+    <div class="cardStyle">
+            <div class="card-img" style={img3}>
+                <!-- <img src={psHiringProcess}></img> -->
+                <div class="tileContent">
+                    Hiring Process
+                </div>
+            </div>
+            <div class="card-img" style={img4}>
+                <!-- <img src={psCommitments}></img> -->
+                <div class="tileContent">
+                    Commitment to Diversity
+                </div>
+            </div>
+    </div>
+   </div>
+
+    <!-- SAN FRANCISCO BANNER WITH BUTTON -->
+    <div class="containerStyle boxStyle1">
+        <div class="boxTitle">SAN FRANCISCO POLICE DEPARTMENT</div></br>
+        <div class="boxText">Complete an Interest Form Today!</div>
+        <div class="slds-clearfix btnStyle">
+            <button type="button" class="slds-button btnTextStyle slds-align_absolute-center"
+                onclick={onclickHandler}>Submit
+                a Candidate Interest Form</button>
+        </div>
+    </div></br></br>
+
+    <!--SFDP Recruitment Video-->
+    <div class="containerStyle">
+        <div class="joinStyle">SDPF Recruitment Video</div><div class="ps_underline"></div></br>
+    <div class="playerTextStyle">View our recruitment video and learn how you can become one of San Francisco's Finest.
+    </div>
+    <div class="playerBoxStyle">
+        <c-ps-youtube-video-player you-tube-id="eisG8AeqWr0"></c-ps-youtube-video-player>
+    </div></br></br>
+    </div>
+
+    <!--Recent News and SFDP Blogs-->
+    <div class="containerStyle">
+        <c-ps-news-blog-section></c-ps-news-blog-section>
+    </div>
+    </br></br>
+</template>

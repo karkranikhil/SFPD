@@ -1,0 +1,17 @@
+.container{
+    width: 76%;
+    margin: auto;
+}
+.loremStyle{
+      font-family: Lato;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19.2px;
+}
+h1{
+    font-family: Lato;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 31.2px;
+}

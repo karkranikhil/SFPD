@@ -1,0 +1,94 @@
+.navBar {
+  /* background-color: #0a1433; */
+  background-color: #f5f6f7;
+  height: 6rem;
+  padding: 1% 12%;
+  width: 100%;
+  /* color: #fff; */
+  color: rgb(0, 0, 0);
+  border-bottom: 0px solid transparent;
+}
+
+.cot-nav {
+  display: flex;
+  /* color: #fff; */
+  color: rgb(0, 0, 0);
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.cot-nav>a {
+  align-items: center;
+  display: flex;
+  line-height: 1rem;
+  padding: 0 2.75rem;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  font-weight: 500;
+  font-size: 1rem;
+  /*color: #606060; not done by me */ 
+  /* color: #fff; */
+  color: rgb(0, 0, 0);
+  padding-bottom: 7px;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.loginBtn {
+  background-color: #ebbc28;
+  height: 2.5rem;
+  color: #0A1433;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24%;
+  text-transform: uppercase;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.userBtn {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: -0.5rem;
+  --sds-c-button-text-color: #606060;
+}
+
+.profileButton {
+  cursor: default;
+}
+
+.vl {
+  border-left: 1px solid black;
+  height: 3rem;
+  padding-right: 3rem;
+}
+
+.headingText {
+  /* color: #fff; */
+  color: rgb(0, 0, 0);
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding-left: 2rem;
+  padding-top: 0.3rem;
+}

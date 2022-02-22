@@ -1,0 +1,162 @@
+.exampleHolder{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+.boxStyle {
+    background: white;
+    box-shadow: 0px 5px 9px rgba(54, 82, 135, 0.1);
+}
+
+.lineStyle {
+    position: inherit;
+    height: 0px;
+
+    border: 1px solid rgba(54, 82, 135, 0.2);
+}
+
+.yellowContainer {
+    padding: 3% 12%;
+    background: #FFDC6B;
+}
+
+.yConTitle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
+
+    color: #003A6A;
+}
+
+.yConText {
+    font-size: 20px;
+    line-height: 22px;
+    color: #003A6A;
+    font-weight: bold;
+}
+.textStyle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 34px;
+    color: #091433;
+}
+.loremStyle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #1D2E54;
+}
+
+.taskbox {
+    background-color: white;
+    border: none;
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
+}
+
+.taskbox h2{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.taskbox strong{
+    color: #2887EC;
+}
+
+.taskInfo{
+    color: #2887EC;
+    display:inline;
+}
+
+.taskFooter{
+    background: #E7F2FD;
+}
+.ps_underline {
+    border-bottom: 4px solid #eabc28;
+    width: 8rem;
+    margin-top: 0.5rem;
+}
+.btnTextStyle{ 
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  
+  color: #FFFFFF;
+}
+.btnStyle {
+
+  text-align: center;
+
+  cursor: pointer;
+  background-color: #2887EC;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  background: #2887EC;
+
+}
+.textStyle2{
+
+font-family: Lato;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+
+color: #091433;
+
+}
+.outerBox {
+    margin: 2%;
+}
+.sideBox {
+    padding: 1rem;
+    background-color: white;
+}
+.blueBox {
+    padding: 1rem;
+    background: #F3F9FF;
+    border-left-color: #2887EC;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+.yellowBox {
+    padding: 1rem;
+    background: #FFF8E3;
+    border-left-color: #E8BB29;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+.redBox {
+    padding: 1rem;
+    background: #FFF5F6;
+    border-left-color: #EC2024;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+.displayText{
+     font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #1D2E54;
+}
+.blueBg{
+    background: #E7F2FD;
+    width: fit-content;
+    font-weight: bold;
+}

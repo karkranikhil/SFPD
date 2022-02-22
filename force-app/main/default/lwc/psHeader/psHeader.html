@@ -1,0 +1,75 @@
+<template>
+    <header class="chi-header slds-no-print">
+        <div class="slds-grid slds-gutters">
+            <div class="navBar slds-grid">
+                <!-- <a href="#"> -->
+                    <div class="slds-col slds-grid slds-size--3-of-8" style="height:100%">
+                        <img class="logo_img" src={logo} onclick={navigateToHome} />
+                        <!-- <p class="headingText">San Francisco <br /> Police Department</p> -->
+                    </div>
+                <!-- </a> -->
+                <!-- <div class="slds-col slds-size--5-of-8"></div> -->
+                <nav class="cot-nav slds-size--5-of-8">
+                    <template if:true={isFull}>
+                        <a href="/s/landinghome" data-item="home">
+                            <p class="hover-underline-animation">Home</p>
+                        </a>
+                    </template>
+                    <template if:false={isFull}>
+                        <a href={baseURL} data-item="home">
+                            <p class="hover-underline-animation">Home</p>
+                        </a>
+                    </template>
+                    
+                    <a data-item="home">
+                        <p class="hover-underline-animation">Hirings</p>
+                    </a>
+                    <a href="/s/landinghome" data-item="home">
+                        <p class="hover-underline-animation">Jobs</p>
+                    </a>
+                    <a data-item="home">
+                        <p class="hover-underline-animation">FAQs</p>
+                    </a>
+                    <!-- <a data-item="Resource"><p class="hover-underline-animation">Resources</p></a> -->
+                    <template if:true={isFull}>
+                        <a data-item="button">
+                            <button class="loginBtn" onclick={handleLogin}>Login</button>
+                            <button class="loginBtn" style="margin-left:10px;"
+                                onclick={handleSignUpClick}>SignUp</button>
+                        </a>
+                    </template>
+                    <template if:false={isFull}>
+                        <a data-item="GM" class="nav-items user-icon">
+                            <div class="vl"></div>
+                            <template if:true={imageUrl}>
+                                <img src={imageUrl} style="border-radius: 50%; height: 40px; width: 40px" />
+                            </template>
+                            <div>
+                                <button class="slds-button profileButton">
+                                    <div style="color: rgb(0, 0, 0);">
+                                        <!-- <div style="color: #fff;"></div> -->
+                                        <p style="line-height:2rem;font-size: 16px;font-weight:380;">{name}</p>
+                                    </div>
+                                    &nbsp;&nbsp;
+                                    <!-- <img src={image} style="width:25%;height:auto;border-radius:25px;"> -->
+                                    <lightning-button-menu class="userBtn" alternative-text="Show menu" variant="bare"
+                                        menu-alignment="right">
+                                        <lightning-menu-item value="Profile" label="Profile"
+                                            style="font-size:1rem;"></lightning-menu-item>
+                                        <lightning-menu-item value="Logout" onclick={logoutLink} label="Logout"
+                                            style="font-size:1rem;"></lightning-menu-item>
+                                    </lightning-button-menu>
+                                </button>
+                            </div>
+
+
+                        </a>
+
+                    </template>
+
+
+                </nav>
+            </div>
+        </div>
+    </header>
+</template>

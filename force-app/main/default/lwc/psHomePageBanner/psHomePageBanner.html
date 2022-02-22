@@ -1,0 +1,38 @@
+<template>
+        <div>
+                <!-- <img src={imageUrl}> -->
+
+                <div style={backgroundStyle}>
+                       <div class="container">
+                        <!--<div class="containerText">San Francisco’s</div>-->
+                        <div class="conPoliceStyle">Police Recruiting Portal
+                        </div>
+
+                        <template if:true={isbtnreq}>
+                                <div class="btnStyle">
+                                        <button type="button" class="slds-button btnTextStyle"
+                                                onclick={onclickHandler}>Submit
+                                                a Candidate Interest Form</button>
+                                </div>
+                        </template>
+                       </div>
+                        <!-- <div class="loremStyle">Discover your San Francisco Police Department</br>
+                                Learn about who we are and what we do
+                        </div> -->
+                        <!-- Also Configured on Community-->
+                        <template if:false={isbtnreq}>
+                                <div class="blueContainer">
+                                        <div class="bConTitle">Be the Change - Begin your Journey with Us
+                                        </div>
+                                        <div class="ps_underline"></div></br>
+                                        <div class="bConText">
+                                                Here is where you embarked on a new journey of growth. Together we will be building – in some cases rebuilding – some of our most critical missions.
+                                                To meet this growth, we are looking for diverse, highly motivated, and talented candidates that are searching for a meaningful career.
+                                                We recognize that reflecting the communities we serve makes us stronger, and that’s why we make diversity and inclusion a huge priority.
+                                                Whether we’re on foot patrol, horseback, or in squad cars, investigating felonies, responding to emergencies or leading classes on public safety, we’re working with you to help keep our community safe.
+                                        </div>
+                                </div>
+                        </template>
+                </div>
+        </div>
+</template>

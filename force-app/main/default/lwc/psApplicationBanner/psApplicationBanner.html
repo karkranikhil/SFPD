@@ -1,0 +1,51 @@
+<template>
+    <div class="container" style={backgroundStyle}>
+        <div class="contentStyle">
+            <template if:true={showDashboard}>
+                <div class="bConTitle">Welcome, {name}</div>
+                <!-- <div class="ps_underline"></div></br> -->
+                <div class="bConText">
+                    Here is where you embarked on a new journey of growth. Together we will be building – in some cases rebuilding – some of our most critical missions. To meet this growth, we are looking for diverse, highly motivated, and talented candidates that are searching for a meaningful career. We recognize that reflecting the communities we serve makes us stronger, and that’s why we make diversity and inclusion a huge priority. Whether we’re on foot patrol, horseback, or in squad cars, investigating felonies, responding to emergencies or leading classes on public safety, we’re working with you to help keep our community safe.
+                </div>
+            </template>
+            <template if:false={showDashboard}>
+                <template if:false={showOnlineApplication}>
+                    <template if:false={showInterestForm}>
+                    <div class="bConTitle2">Entry Level Police Officer</div>
+                     <div class="bConTitle2">Applicant: {name}</div>
+                     <template if:true={isStage2}>
+                        <div class="bConTitle2">Status: Active</div>
+                     </template>
+                     <template if:false={isStage2}>
+                         <div class="bConTitle2">Status: {overallAppStatus}</div>
+                     </template>
+<!--<div class="bConTitle">Hey, {name}</div>
+                        <div class="ps_underline"></div></br>
+                        <template if:true={prevAppStatus}>
+                            <div class="bConText">
+                                Your application status is in {prevAppStatus} stage.
+                            </div>
+                        </template>-->
+                    </template>
+                </template>
+                <template if:true={showInterestForm}>
+                    <div class="bConTitle">Welcome, {name}</div>
+                    <!-- <div class="ps_underline"></div></br> -->
+                    <div class="bConText">
+                        Submit your Online Interest Form today!
+                    </div>
+                </template>
+                 <template if:true={showOnlineApplication}>
+                    <div class="bConText">Welcome, {name}</div>
+                    <div class="bConTitle">Entry Level Police Officer Application</div>
+                    <!-- <div class="ps_underline"></div></br> -->
+                    <div class="bConText">
+                        Begin your hiring journey by completing your Online Application. You can save any existing entries and return later to finish.
+                         Remember, the sooner you accurately complete and submit your application, the sooner we can assign a recruiter to you.
+                    </div>
+                </template>
+            </template>
+
+        </div>
+    </div>
+</template>

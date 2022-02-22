@@ -1,0 +1,112 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    padding: 3% 12%;
+
+}
+
+.titleStyle {
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 34px;
+    color: #091433;
+}
+
+.ps_underline {
+    border-bottom: 4px solid #eabc28;
+    width: 8rem;
+    margin-top: 0.5rem;
+}
+
+.loremStyle {
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #1D2E54;
+
+}
+
+.textStyle {
+    padding: 10px;
+    font-size: medium;
+    color: orange;
+}
+
+/* .container .content {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    position: relative;
+
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+} */
+
+.cardTitle {
+    position: relative;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    padding: 2%;
+
+    color: #2887EC;
+}
+
+.cardDateTimeStyle {
+    position: inherit;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 2%;
+
+    color: #4D4D4D;
+}
+
+.cardTextStyle {
+    position: inherit;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 2%;
+
+    color: #1D2E54;
+}
+
+.imgStyle {
+    max-height: 90%;
+}
+
+.btnStyle {
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    background-color: #e8bb29;
+    color: #0A1433;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Lato;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 3%;
+}

@@ -1,0 +1,183 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    padding: 3% 12%;
+
+}
+
+.ps_underline {
+    border-bottom: 4px solid #eabc28;
+    width: 8rem;
+    margin-top: 0.5rem;
+}
+
+.jobStyle {
+    height: 38px;
+    left: 100px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 34px;
+    color: #091433;
+}
+
+.ps-hr-line {
+    border-bottom: 3px solid #DDDDDD;
+    margin-top: 1%;
+    padding: 0 6%;
+}
+
+.tile {
+    position: inherit;
+    max-width: auto;
+    height: auto;
+    flex: auto;
+    margin-bottom: 10px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top: 4px solid #CCB078;
+}
+
+.tilelarge {
+    position: inherit;
+    max-width: auto;
+    height: auto;
+    flex: auto;
+    margin: 0 auto;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top: 4px solid #CCB078;
+}
+
+.cardTitle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 34px;
+    cursor: pointer;
+    color: #2887EC;
+}
+
+.cardDateTimeStyle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4D4D4D;
+    padding: 1% 0;
+}
+
+.cardTextStyle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1D2E54;
+    padding: 2% 0;
+}
+
+.titleStyle {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 2% 0.5%;
+    line-height: 24px;
+    color: #003A6A;
+    border-bottom: 2px solid #091434;
+}
+
+.titleStyle2 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 2% 0.5%;
+    color: #888888;
+    border-bottom: 2px solid #d9d8d8;
+}
+
+.line {
+    width: auto;
+    height: 0px;
+
+    border: 1px solid #C7C7C7;
+}
+
+.small_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    padding: 3% 12%;
+}
+
+.small_title {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+    color: rgb(155, 154, 154);
+    padding: 1% 0;
+}
+
+.small_desc {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(0, 0, 0);
+}
+
+.btnTextStyle {
+    position: relative;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 9px;
+
+    padding-left: inherit;
+    padding-right: inherit;
+
+
+    color: #FFFFFF;
+}
+
+.btnStyle {
+
+    padding: 5px 10px;
+
+    font-size: 16px;
+    line-height: auto;
+    text-align: center;
+
+    cursor: pointer;
+    background-color: #2887EC;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    background: #2887EC;
+
+    width: fit-content;
+
+}
+
+span.slds-accordion__summary-content {
+    font-size: 20px;
+    font-weight: 500;
+    color: #2887EC;
+}
+
+.cursor{
+    cursor: pointer;
+}

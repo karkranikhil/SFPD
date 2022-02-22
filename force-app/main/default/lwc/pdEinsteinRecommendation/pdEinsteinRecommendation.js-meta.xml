@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <!-- <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target> -->
+        <!--<target>lightning__Tab</target>-->
+        <!--<target>lightning__RecordAction</target>-->
+        <!--<target>lightning__Inbox</target>-->
+        <!--<target>lightning__UtilityBar</target>-->
+        <!--<target>lightning__FlowScreen</target>-->
+        <!--<target>lightningSnapin__ChatMessage</target>-->
+        <!--<target>lightningSnapin__Minimized</target>-->
+        <!--<target>lightningSnapin__PreChat</target>-->
+        <!--<target>lightningSnapin__ChatHeader</target>-->
+        <!--<target>lightningCommunity__Page</target>-->
+        <!--<target>lightningCommunity__Default</target>-->
+        <!--<target>lightningCommunity__Page_Layout</target>-->
+        <!--<target>lightningCommunity__Theme_Layout</target>-->
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="heading" type="String" label="Heading" default="Einstein Recommendation"/>
+
+            <property name="score" type="String" label="Overall score" default="90%"/>
+            <property name="scoreLabel" type="String" label="Overall score label" default="OUTCOME SCORE"/>
+
+            <property name="labelFirst" type="String" label="Label for first section" default="LEADING CAUSES"/>
+            <property name="firstSection1" type="String" label="Label for first section 1" default="Military"/>
+            <property name="firstSection2" type="String" label="Label for first section 2" default="Education"/>
+            <property name="firstSection1Value" type="String" label="Label for first section 1 value" default="Candidates have military experience"/>
+            <property name="firstSection2Value" type="String" label="Label for first section 2 value" default="Candidates has graduate from junior college. 4-years collegeor an accreditied drgree program"/>
+
+            <property name="firstSectionA" type="String" label="Label for first section A" default="Language Skills"/>
+            <property name="firstSectionAValue" type="String" label="Label for first section A Value" default="Only speaking english"/>
+
+            <property name="labelSecond" type="String" label="Label for second section" default="HOW TO IMPROVE THIS"/>
+            <property name="secondSection1" type="String" label="Label for Second section 1" default="Language Skills"/>
+            <property name="secondSection1Value" type="String" label="Label for Second section 1 value" default="Improve language proficiency by endrolling in multilungal classes"/>
+
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

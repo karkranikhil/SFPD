@@ -1,0 +1,21 @@
+<aura:component controller="sendMailController" implements="force:lightningQuickAction,force:hasRecordId">
+    <aura:attribute name="reason" type="String" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="otherField" type="Boolean" default="true" />
+    <aura:attribute name="picvalue" type="List" />
+    <aura:attribute name="primaryReason" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+
+
+    <lightning:select name="primaryReasonSelect" label="Primary Reason" required="true" value="{!v.primaryReason}" onchange="{!c.handleChange}">
+        <aura:iteration items="{!v.picvalue}" var="item">
+            <option text="{!item}" value="{!item}" selected="{!item}" />
+        </aura:iteration>
+    </lightning:select>
+    <aura:if isTrue="{!v.otherField}">
+        <lightning:textarea name="reasonDisqualification" value="{!v.reason}" label="Reason for disqualification"
+        placeholder="type here..." />
+    </aura:if> 
+    <br/>
+    <lightning:button variant="brand" label="Send" title="Send" onclick="{!c.submitDetails}" />
+</aura:component>

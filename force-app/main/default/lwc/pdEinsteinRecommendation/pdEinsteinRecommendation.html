@@ -1,0 +1,83 @@
+<template>
+    <!-- header section  -->
+        <article class="slds-card">
+            <div class="slds-grid slds-einstein-header slds-card__header">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon-utility-salesforce1">
+                                <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#salesforce1"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate" title="Einstein (10+)">
+                                <!-- <a href="#" class="slds-card__header-link" title="Einstein (10+)"> -->
+                                    <b><span class="slds-text-heading_small">{heading}</span></b>
+                                <!-- </a> -->
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"></div>
+                </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+                <div class="whitebg">
+                    <div class="section">
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-3">
+                                <h2 class="value score">{score}</h2>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <h2>{scoreLabel}</h2>
+                                <!-- <hr> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <!-- first label -->
+                        <b><h2>{labelFirst}</h2></b>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-3">
+                                <h2 class="value">+ {firstSection1}</h2>
+                                <h2 class="value">+ {firstSection2}</h2>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <h2>{firstSection1Value}</h2>
+                                <h2>{firstSection2Value}</h2>
+                            </div>
+                        </div>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-3">
+                                <h2 class="sectionA">- {firstSectionA}</h2>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <h2>{firstSectionAValue}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Second label -->
+                    <div class="section">
+                       <b><h2>{labelSecond}</h2></b>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-3">
+                                <h2 class="value"> {secondSection1}</h2>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <h1>{secondSection1Value}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- <footer class="slds-card__footer">
+                <a class="slds-card__footer-action" href="#">View All
+                    <span class="slds-assistive-text">Einstein Recommendations</span>
+                </a>
+            </footer> -->
+        </article>
+    <!-- score section -->
+    
+</template>

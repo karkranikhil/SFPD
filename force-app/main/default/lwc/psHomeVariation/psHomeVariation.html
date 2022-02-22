@@ -1,0 +1,478 @@
+<template>
+    <template if:true={showSpinner}>
+        <div class="exampleHolder">
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </div>
+    </template>
+    <!-- Yellow Container
+    <div class="yellowContainer">
+        <div class="contentStyle">
+            <div class="yConTitle">Congratulations! You’ve successfully qualified {stageNoLess}.</div></br>
+            <div class="yConText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate duis purus at
+                tempor dignissim dui
+                velit nibh tristique. Eu diam, turpis duis mi arcu. Sed pellentesque varius id amet volutpat mi. At
+                condimentum tellus aliquam ullamcorper nisl tristique ante. Vitae luctus vehicula non tellus in
+                pulvinar. Risus nulla fringilla vestibulum rhoncus, amet morbi quis consectetur ipsum. Non vestibulum in
+                nibh sapien integer turpis.</div>
+        </div>
+    </div>
+    </br>-->
+    <div class="slds-grid outerBox">
+        <div class="slds-col slds-size_1-of-4 boxStyle">
+            <div class="sideBox">
+                <div class="textStyle">Pending Tasks</div>
+                <div class="ps_underline"></div></br></br>
+                <div class="blueBox">
+                    <p>Academy Starts: 7 days </p>
+                </div>
+                </br>
+                <div class="blueBox">
+                    <ul>
+                        <li>
+                            <p>Have you trained for the PAT today?</p>
+                        </li>
+                        <li>
+                            <ul class="slds-is-nested slds-list_dotted">
+                                <li> Tricep Extension: 3 Sets of 12 to 15 repetitions 4 to 5 times a week. </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+            </br></br>
+            <div class="sideBox">
+                <div class="textStyle">Quick Updates</div>
+                <div class="ps_underline"></div></br></br>
+                <div class="redBox">
+                    <p>Your Application for SFPD Cadet program under Civilian Job posting has been
+                        <strong> Rejected</strong>.
+                    </p>
+                </div>
+                </br>
+                <div class="yellowBox">
+                    <p>Your Application for Lateral Entry Program under Civilian Job posting is Under Review. Keep
+                        Checking
+                        this
+                        space for <strong>Updates</strong>.</p>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="slds-col slds-size_3-of-4  sideBox boxStyle">
+            <div class="textStyle">Stage {stageNo} : {currentAppStatus}</div>
+            <div class="ps_underline"></div></br></br>
+            <!--<div class="loremStyle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit alias dolore ipsa
+            repellendus quisquam quaerat dolores cumque? Officiis similique sequi nemo a corporis veniam eum eligendi
+            nulla repellat excepturi, ea sed neque!</div>
+        </br></br>-->
+            <div class="slds-p-around_small">
+                <lightning-progress-indicator current-step={stageNo} type="path" variant="base">
+                    <lightning-progress-step label="Pre-Qualification" value="1"></lightning-progress-step>
+                    <lightning-progress-step label="Online Application" value="2"></lightning-progress-step>
+                    <lightning-progress-step label="Under Review" value="3"></lightning-progress-step>
+                    <lightning-progress-step label="Qualifying Tests" value="4"></lightning-progress-step>
+                    <lightning-progress-step label="Background" value="5"></lightning-progress-step>
+                    <lightning-progress-step label="Eligibility List" value="6"></lightning-progress-step>
+                    <lightning-progress-step label="On Hold" value="7"></lightning-progress-step>
+                    <lightning-progress-step label="Final Offer" value="8"></lightning-progress-step>
+                    <lightning-progress-step label="Disqualified-Closed" value="9"></lightning-progress-step>
+                </lightning-progress-indicator>
+            </div>
+            <hr class="lineStyle">
+            <template if:true={isStage2}>
+                <div class="loremStyle">
+                    <b>Your application has been submitted and pending assignment to a recruiter.</b></br></br>
+                    <!-- <p style="color:green;">Congratulations!</p> </br>
+                You have Successfully Submitted the Online Application Form for the position of Entry Level Police
+                Officer.
+                We are excited to assist you through your hiring journey with San Francisco Police Department.-->
+                </div>
+                <div class="displayText">
+                    Applications for City and County of San Francisco jobs are only accepted through an online process.
+                    Applicants may be contacted by email about this announcement and, therefore, it is their
+                    responsibility to ensure that their registered email address is accurate and kept up-to-date.
+                    Applicants should set up their email to accept CCSF mail from @sfgov.org.</br></br>
+                    Applicants will receive a confirmation email that their online application has been received in
+                    response to every announcement
+                    for which they file. Applicants should retain this confirmation email for
+                    their records.
+                    Failure to receive this email means that the online application was not submitted or
+                    received.</br></br>
+                    If you have any questions regarding this recruitment or application process, please contact the exam
+                    analyst,
+                    Liezel Cruz by telephone at 415-551-8947 or by email at dhr-publicsafety@sfgov.org.
+                    </br></br>You may also contact the San Francisco Police Department Recruitment Unit
+                    1245 3rd Street, 5th Floor, San Francisco, CA 94158</br>
+                    Phone: 415-837-7270</br>
+                    Fax: 415-575-6095</br></br>
+                    <a href="mailto:joinsfpd@sfgov.org"><img src={emailicon} /> joinsfpd@sfgov.org</a></br>
+                    <a href="https://twitter.com/SFPDRecruitment"><img src={twittericon} />
+                        twitter.com/SFPDRecruitment</a></br>
+                    <a href="https://www.facebook.com/SFPDRecruitment"><img src={facebookicon} />
+                        facebook.com/SFPDRecruitment</a></br>
+                </div>
+                </br>
+                <hr class="lineStyle">
+                </br>
+                <c-ps-card-stack title={faqtitle}></c-ps-card-stack>
+                </br>
+                </br>
+                <c-ps-news-blog-section></c-ps-news-blog-section>
+            </template>
+            <template if:true={isStage3}>
+                <div class="loremStyle"><b>Your application has been assigned to recruiter Yaqub for review.</b></div></br>
+                <div class="displayText">You may be contacted by your assigned recruiter for clarification and/or
+                    correction to your submitted application. Once the review is
+                    complete and no disqualifiable factors identified you will be able to proceed to the Qualifying
+                    Tests stage. Below are the resources
+                    for the preparation of the next stage.</div>
+                <!--
+            <div class="yConText">Thank you</div></br>
+            <div class="loremStyle">Your Online Application has been submitted and the application is Under Review. Once
+                it gets reviewed by the Member/Recruiter of the San Francisco Police Department you will be able to
+                proceed for the Qualifying Tests stage.
+                </br>Below are the resources for the preparation of the next stage.
+            </div> --></br></br>
+                <c-ps-card-stack title={faqtitle}></c-ps-card-stack>
+                </br></br>
+                <c-ps-news-blog-section></c-ps-news-blog-section>
+
+                <!--
+            <p style="text-align: left;"><span style="color: #000000;"><strong>CONGRATULATIONS! YOU HAVE MET THE MINIMUM
+                        PREQUALIFICATION CRITERIA.&nbsp;</strong></span></p>
+            <p style="text-align: left;"></p>
+            <p style="text-align: left;"></p>
+            <p style="text-align: left;"><span style="color: #000000;">An invitation to complete our application for the
+                    sworn police officer job opening has been sent to your email address.&nbsp;</span></p>
+            <p style="text-align: left;"></p>
+            <p style="text-align: left;"><span style="color: #000000;">Thank you for your interest in becoming a police
+                    officer with the San Francisco Police Department.&nbsp;</span></p>
+            <p style="text-align: left;"></p>
+            <p style="text-align: left;"><span style="color: #000000;">If you believe you received this message in
+                    error, please contact our recruitment office at 123-123-1234.</span></p>-->
+            </template>
+            <template if:true={isStage4}>
+                <div class="yConText">My Assigned Tasks</div></br>
+                <div class="displayText">Applications are required to successfully pass a written examination before
+                    qualifying to participate in the Physical Ability Test (PAT) and Oral Examination. </div>
+                </br>
+                <template for:each={tasks} for:item="task">
+                    <div key={task.Id}>
+                        <lightning-layout class="slds-card slds-p-top_small slds-m-bottom_large taskbox" multiple-rows>
+                            <lightning-layout-item size="1" class="slds-align_absolute-center">
+                                <img src={checked} if:true={task.Checked}></img>
+                                <img src={unchecked} if:false={task.Checked}></img>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="9">
+                                <h2>Task #{task.Index}: <strong>{task.taskTitle}</strong></h2>
+                                <div class="blueBg"> Candidates must arrive 30 minutes before the examination time.
+                                </div> <br />
+                                <lightning-layout if:false={task.Checked}>
+                                    <template if:true={task.Schedule}>
+                                        <template if:false={task.ReTake}>
+                                            <template if:false={task.ReSchedule}>
+                                                <lightning-layout-item size="5" padding="around-small">
+                                                    <template if:false={task.isDisabled__c}>
+                                                        <div class="btnStyle">
+                                                            <button type="button" class="slds-button btnTextStyle"
+                                                                data-item={task.Type__c} onclick={selectHandler}
+                                                                data-id={task.Id} disabled={task.isDisabled__c}>Schedule
+                                                                Exam </button>
+                                                        </div>
+                                                    </template>
+                                                    <template if:true={task.isDisabled__c}>
+                                                        <div class="disabledbtnStyle">
+                                                            <button type="button" class="slds-button btnTextStyle"
+                                                                data-item={task.Type__c} onclick={selectHandler}
+                                                                data-id={task.Id} disabled={task.isDisabled__c}>Schedule
+                                                                Exam </button>
+                                                        </div>
+                                                    </template>
+                                                </lightning-layout-item>
+                                            </template>
+                                        </template>
+                                    </template>
+                                    <template if:true={task.ReTake}>
+                                        <template if:false={task.Schedule}>
+                                            <template if:false={task.ReSchedule}>
+                                                <lightning-layout-item size="5" padding="around-small">
+                                                    <template if:false={task.isDisabled__c}>
+                                                        <div class="btnStyle">
+                                                            <button type="button" class="slds-button btnTextStyle"
+                                                                data-item={task.Type__c} onclick={selectHandler}
+                                                                data-id={task.Id} disabled={task.isDisabled__c}>Re-Take
+                                                                Exam
+                                                            </button>
+                                                        </div>
+                                                    </template>
+                                                    <template if:true={task.isDisabled__c}>
+                                                        <div class="disabledbtnStyle">
+                                                            <button type="button" class="slds-button btnTextStyle"
+                                                                data-item={task.Type__c} onclick={selectHandler}
+                                                                data-id={task.Id} disabled={task.isDisabled__c}>Re-Take
+                                                                Exam
+                                                            </button>
+                                                        </div>
+                                                    </template>
+                                                    <!--  <div class="btnStyle">
+                                                 <button type="button" class="slds-button btnTextStyle" data-item={task.Type__c} onclick={selectHandler} data-id={task.Id} disabled={task.isDisabled__c}>Re-Take Exam </button>
+                                              </div>
+                                                  <lightning-button variant="brand" class="slds-button btnTextStyle" label="Re-Take Exam" data-item={task.Type__c}
+                                                        onclick={selectHandler} data-id={task.Id} disabled={task.isDisabled__c}>
+                                                    </lightning-button> -->
+                                                </lightning-layout-item>
+                                            </template>
+                                        </template>
+                                    </template>
+                                    <template if:true={task.ReSchedule}>
+                                        <template if:false={task.Schedule}>
+                                            <template if:false={task.ReTake}>
+                                                <lightning-layout-item size="5" padding="around-small">
+                                                    <template if:false={task.isDisabled__c}>
+                                                        <div class="btnStyle">
+                                                            <button type="button" class="slds-button btnTextStyle"
+                                                                data-item={task.Type__c} onclick={selectHandler}
+                                                                data-id={task.Id}
+                                                                disabled={task.isDisabled__c}>Re-Schedule
+                                                                Exam </button>
+                                                        </div>
+                                                    </template>
+                                                    <template if:true={task.isDisabled__c}>
+                                                        <div class="disabledbtnStyle">
+                                                            <button type="button" class="slds-button btnTextStyle"
+                                                                data-item={task.Type__c} onclick={selectHandler}
+                                                                data-id={task.Id}
+                                                                disabled={task.isDisabled__c}>Re-Schedule
+                                                                Exam </button>
+                                                        </div>
+                                                    </template>
+                                                    <!-- <div class="btnStyle">
+                                                 <button type="button" class="slds-button btnTextStyle" data-item={task.Type__c} onclick={selectHandler} data-id={task.Id} disabled={task.isDisabled__c}>Re-Schedule Exam </button>
+                                              </div>
+                                                   <lightning-button variant="brand" class="slds-button btnTextStyle" label="Re-Schedule Exam" data-item={task.Type__c}
+                                                        onclick={selectHandler} data-id={task.Id} disabled={task.isDisabled__c}>
+                                                    </lightning-button>
+                                                 -->
+                                                </lightning-layout-item>
+                                            </template>
+                                        </template>
+                                    </template>
+                                </lightning-layout>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2">
+                                Priority: {task.Priority}
+                            </lightning-layout-item>
+                            <div
+                                class="slds-grid slds-gutters slds-align_absolute-center slds-p-vertical_small slds-size_1-of-1 taskFooter">
+                                <div class="slds-col slds-align_absolute-center slds-size_1-of-3">
+                                    <span>
+                                        <template if:true={task.Reporting_Time__c}>
+                                            <div class="taskInfo">Reporting Time</div>:
+                                            <lightning-formatted-date-time value={task.Reporting_Time__c} hour="2-digit"
+                                                minute="2-digit" time-zone="UTC" hour12="false">
+                                            </lightning-formatted-date-time>
+                                        </template>
+                                        <template if:false={task.Reporting_Time__c}>
+                                            <div class="taskInfo">Reporting Time</div>: To be decided
+                                        </template>
+
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-align_absolute-center  slds-size_1-of-3">
+                                    <span>
+                                        <template if:true={task.Test_Time__c}>
+                                            <div class="taskInfo">Test Time</div>:
+                                            <lightning-formatted-date-time value={task.Test_Time__c} hour="2-digit"
+                                                minute="2-digit" time-zone="UTC" hour12="false">
+                                            </lightning-formatted-date-time>
+                                        </template>
+                                        <template if:false={task.Test_Time__c}>
+                                            <div class="taskInfo">Test Time</div>: To be decided
+                                        </template>
+
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-align_absolute-center slds-size_1-of-3">
+                                    <span>
+                                        <template if:true={task.Test_Date__c}>
+                                            <div class="taskInfo">Actual Test Date</div>: {task.Test_Date__c}
+                                        </template>
+                                        <template if:false={task.Test_Date__c}>
+                                            <div class="taskInfo">Actual Test Date</div>: To be Updated
+                                        </template>
+                                    </span>
+                                </div>
+                            </div>
+                            <div
+                                class="slds-grid slds-border_top slds-gutters slds-p-vertical_small slds-align_absolute-center slds-size_1-of-1 taskFooter">
+                                <div class="slds-col slds-align_absolute-center slds-size_1-of-3">
+                                    <span>
+                                        <template if:true={task.Testing_Location__c}>
+                                            <div class="taskInfo">Testing Location</div>: {task.Testing_Location__c}
+                                        </template>
+                                        <template if:false={task.Testing_Location__c}>
+                                            <div class="taskInfo">Testing Location</div>: To be decided
+                                        </template>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-align_absolute-center slds-size_1-of-3">
+                                    <span>
+                                        <template if:true={task.Test_Schedule_Date__c}>
+                                            <div class="taskInfo">Registration End Date</div>:
+                                            {task.Test_Schedule_Date__c}
+                                        </template>
+                                        <template if:false={task.Test_Schedule_Date__c}>
+                                            <div class="taskInfo">Registration End Date</div>: Not Scheduled
+                                        </template>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-align_absolute-center slds-size_1-of-3">
+                                    <template if:true={task.ReTake}>
+                                        <span>
+                                            <div class="taskInfo">Status</div>: Not Qualified
+                                        </span>
+                                    </template>
+                                    <template if:false={task.ReTake}>
+                                        <span>
+                                            <div class="taskInfo">Status</div>: {task.Status__c}
+                                        </span>
+                                    </template>
+                                </div>
+                            </div>
+                        </lightning-layout>
+                    </div>
+                </template>
+                <c-ps-card-stack title={faqtitle}></c-ps-card-stack>
+                </br></br>
+                <c-ps-news-blog-section></c-ps-news-blog-section>
+            </template>
+            <template if:true={isStage5}>
+                <div class="yConText">My Assigned Tasks</div></br>
+                <div class="displayText">The Background Unit will notify the candidate if they are to move forward to
+                    the polygraph, medical and psychological testing phase. Successful candidates will be contacted by
+                    the
+                    Background Unit and provided with a conditional offer of employment and invitation to an Academy
+                    Class. </div>
+                </br>
+                <c-ps-bg-chk-container></c-ps-bg-chk-container>
+            </template>
+            <template if:true={isStage9}>
+                <div class="loremStyle">
+
+                    <p style="color:green;">Thank you</p> </br>
+                    You have progressed to the next hurdle of the hiring process and your application has been put into
+                    the
+                    Eligibility List for the Entry Level Police Officer position in the San Francisco Police Department.
+
+                    </br>Conditional Offer Letter has been sent to your registered email address.
+                </div>
+                </br>
+
+                </br>
+                <c-ps-card-stack title={faqtitle}></c-ps-card-stack>
+                </br>
+                </br>
+                <c-ps-news-blog-section></c-ps-news-blog-section>
+            </template>
+            <template if:true={isStage6}>
+                <div class="textStyle2">On Hold Instructions</div> </br>
+                <div class="loremStyle">
+                    The San Francisco Police Department Recruitment Unit would like to thank you for
+                    your continued interest in a position with our agency. After a review of your hiring journey and
+                    conversations with your assigned recruiter, it was determined your hiring process would be placed
+                    in<b> HOLD</b> for the primary reason listed below - 
+                    </br></br>
+                    <b>{onHoldReason}</b>
+                    </br></br>
+
+                    Your recruitment account will remain accessible to you
+                    throughout the hold period. You may be required to retest certain aspects of your process to include
+                    but
+                    not limited to: Physical Ability Test, Written Examination, Polygraph Examination, Testing for Use
+                    of
+                    Controlled Substances, Psychological Examination, Medical Examination, Vision Testing, Hearing
+                    Testing.
+                    If you believe you received this message in error, please contact our recruitment office at
+                    123-123-1234.
+                </div>
+            </template>
+            <template if:true={isStage7}>
+                <!--<div class="textStyle2">Final Offer</div> </br>-->
+                <div class="loremStyle">
+                    Congratulations on completing the hiring portion of the San Francisco Police Department Entry Level
+                    Police Officer career opportunity.
+                    We are excited to extend a FINAL OFFER of employment to you for the Entry Level Police Officer
+                    position
+                    with the San Francisco Police Department.
+                    Please respond to this email as soon as possible so we may reserve your seat for the upcoming
+                    academy
+                    class.
+                    If you are no longer interested in this Entry Level Police Officer position, please contact your
+                    assigned recruiter and advise them of your decision.
+                    </br>
+                    If you feel you received this email in error, please respond to this email and advise the same.
+
+                </div>
+                </br></br>
+                <c-ps-card-stack title={faqtitle}></c-ps-card-stack>
+                </br></br>
+                <c-ps-news-blog-section></c-ps-news-blog-section>
+            </template>
+            <template if:true={isStage8}>
+                <div class="textStyle2">Application Disqualified</div> </br>
+                <template if:true={isOnlineDisqualified}>
+                    <div class="loremStyle">
+                        Unfortunately, you have not met the "Online Application" criteria for the position of "Entry
+                        Level Police Officer".
+                        Thank you for your interest in becoming a Police Officer with the San Francisco Police
+                        Department.
+                        After a review of your Online Application, you currently do not meet minimum qualifications.
+                        We are unfortunately unable to process your application request at this time.
+                        </br></br>
+                        If you believe you received this message in error, please contact our Recruiting Officer at
+                        123-123-1234.
+                    </div>
+                </template>
+                <template if:true={isQTDisqualified}>
+                    <div class="loremStyle">
+                        Unfortunately, you have not met the "Qualifying Tests" criteria for the position of "Entry Level
+                        Police Officer".
+                        Thank you for your interest in becoming a Police Officer with the San Francisco Police
+                        Department.
+                        After a review of your Qualifying Tests results, you currently do not meet minimum
+                        qualifications.
+                        We are unfortunately unable to process your application request at this time.
+                        </br></br>
+                        If you believe you received this message in error, please contact our Recruiting Officer at
+                        123-123-1234.
+                    </div>
+                </template>
+                <template if:true={isBGDisqualified}>
+                    <div class="loremStyle">
+                        Unfortunately, you have not met the "Background Investigation" criteria for the position of
+                        "Entry Level Police Officer".
+                        Thank you for your interest in becoming a Police Officer with the San Francisco Police
+                        Department.
+                        After a review of your Background Investigation process, you currently do not meet minimum
+                        qualifications.
+                        We are unfortunately unable to process your application request at this time.
+                        </br></br>
+                        If you believe you received this message in error, please contact our Recruiting Officer at
+                        123-123-1234.
+                    </div>
+                </template>
+                </br></br>
+                <c-ps-card-stack title={faqtitle}></c-ps-card-stack>
+                </br></br>
+                <c-ps-news-blog-section></c-ps-news-blog-section>
+            </template>
+        </div>
+        <!-- <template if:true={isStage5}>
+        <c-ps-card-stack title={faqtitle}></c-ps-card-stack>
+        </br></br>
+        <c-ps-news-blog-section></c-ps-news-blog-section>
+    </template>-->
+    </div>
+</template>
