@@ -61,7 +61,7 @@ export default class Fullcalendar extends NavigationMixin(LightningElement) {
         }
         this.fullCalendarJsInitialised = true;
         Promise.all([
-             loadScript(this, MomentTimezone + "/MomentTimezone.js"),
+             //loadScript(this, MomentTimezone + "/MomentTimezone.js"),
              loadStyle(this, FullCalendarJS + "/FullCalendarJS/fullcalendar.min.css"),
              loadScript(this, FullCalendarJS + "/FullCalendarJS/jquery.min.js"),
              loadScript(this, FullCalendarJS + "/FullCalendarJS/moment.min.js"),
@@ -129,10 +129,10 @@ export default class Fullcalendar extends NavigationMixin(LightningElement) {
                     console.log('New Date '+new Date(event.StartDateTime)); */
 
                 console.log('=====Start '+event.StartDateTime);
-                console.log('======Start Formatted '+moment(event.StartDateTime).utc().format());
+                //console.log('======Start Formatted '+moment(event.StartDateTime).utc().format());
              
                 console.log('======= End '+event.EndDateTime);
-                console.log('========End Formatted'+moment(event.EndDateTime).tz(timeZone).format());
+                //console.log('========End Formatted'+moment(event.EndDateTime).tz(timeZone).format());
                
                 if(event.Subject =='Written Test'){
                     this.isWritten = true;
@@ -141,10 +141,11 @@ export default class Fullcalendar extends NavigationMixin(LightningElement) {
                     return {
                         id: event.Id,
                         title: event.Subject,
-                        start: moment(event.StartDateTime).utc().format(),
-                        end: moment(event.EndDateTime).utc().format(),
+                        start: (event.StartDateTime),
+                        //start: moment(event.StartDateTime).utc().format(),
+                        //end: moment(event.EndDateTime).utc().format(),
                         //start: moment(event.StartDateTime).tz(timeZone).format(),
-                        //end: moment(event.EndDateTime).tz(timeZone).format(),
+                        end: (event.EndDateTime),
                         allDay: event.IsAllDayEvent
                     };
                 });
@@ -186,7 +187,7 @@ export default class Fullcalendar extends NavigationMixin(LightningElement) {
         let time = taskDate.toLocaleTimeString();
 
         let eventId = event.currentTarget.dataset.id;
-         console.log('toLocaleTimeString '+moment(time).utc().format());
+         //console.log('toLocaleTimeString '+moment(time).utc().format());
         
         /* console.log('time :>> ',typeof(time));
         console.log(event.currentTarget.dataset.date, taskId, taskDate);
@@ -203,7 +204,7 @@ export default class Fullcalendar extends NavigationMixin(LightningElement) {
                     this[NavigationMixin.Navigate]({
                         type: 'standard__webPage',
                         attributes: {
-                            url: 'https://sfpolice-psportal.cs195.force.com/s/view-application?applicationId='+ this.applicationId
+                            url: 'https://sfmtx-psportal.cs195.force.com/s/view-application?applicationId='+ this.applicationId
                         }
                     });
             })
@@ -226,7 +227,7 @@ export default class Fullcalendar extends NavigationMixin(LightningElement) {
                     this[NavigationMixin.Navigate]({
                         type: 'standard__webPage',
                         attributes: {
-                            url: 'https://sfpolice-psportal.cs195.force.com/s/view-application?applicationId='+ this.applicationId
+                            url: 'https://sfmtx-psportal.cs195.force.com/s/view-application?applicationId='+ this.applicationId
                         }
                     });
                 })

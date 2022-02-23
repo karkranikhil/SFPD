@@ -414,13 +414,20 @@ public class ApplicationFormTriggerHandler {
                                     WHERE 
                                     Application__c IN :mNewApplicationForm.keySet()];
         try{
-            delete lfMember;
-        	delete lEdInfo;
-            if(String.isBlank(lempRec[0].Job_Title__c)&&
-                String.isBlank(lempRec[0].Name_and_Title_of_supervisor__c) &&
-                String.isBlank(lempRec[0].Nature_and_duties_of_your_position__c)){
-                 	delete lempRec;   
-                }
+            if(lfMember.size() > 0){
+                delete lfMember;
+            }
+            if(lEdInfo.size()>0){
+                delete lEdInfo;
+            }
+        	
+            if(lempRec.size() > 0){
+                if(String.isBlank(lempRec[0].Job_Title__c)&&
+                    String.isBlank(lempRec[0].Name_and_Title_of_supervisor__c) &&
+                    String.isBlank(lempRec[0].Nature_and_duties_of_your_position__c)){
+                        delete lempRec;   
+                    }
+            }
         }
         catch(Exception e){
             System.debug('Exception '+e);

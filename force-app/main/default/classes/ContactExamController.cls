@@ -69,7 +69,7 @@ public without sharing class ContactExamController {
 
 
 
-        update new Registration__c(Id = taskId,Registration_Date__c = todaysDate, Status__c = 'Registered', Testing_Location__c = 'San Francisco',Test_Time__c = lEvent[0].StartDateTime.time(),
+        update new Registration__c(Id = taskId,Registration_Date__c = todaysDate, Status__c = 'Registered', Testing_Location__c = 'MTX City',Test_Time__c = lEvent[0].StartDateTime.time(),
         Reporting_Time__c = lEvent[0].StartDateTime.time().addMinutes(-30),Test_Schedule_Date__c=taskDate);
         Registration__c reg = [SELECT ID,Application__c,Application__r.Contact__c,Application__r.Contact__r.Email,Type__c,Application__r.OwnerId FROM Registration__c WHERE Id = :taskId];
         User u = [SELECT ID,Email FROM User Where ContactId = :reg.Application__r.Contact__c];
